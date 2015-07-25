@@ -35,6 +35,9 @@
   },
   "devDependencies": {
     "chai": "^1.10.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-uglify": "^0.9.1",
     "json2csv": "^2.2.2",
     "mocha": "^2.0.1"
   }
