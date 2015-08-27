@@ -11,10 +11,10 @@ var express = require('express')
   , locations = require('./routes/locations')
   , fauxAuth = require('./middleware/staging-auth')
   ;
-  
+
 var app = express();
 var env = app.get('env');
-var config = require('./config/config')[env];
+var config = require('./config/config')[env] || {};
 
 var dbCnx = process.env.MONGOLAB_URI || config.db;
 var db = mongoose.connect(dbCnx);
@@ -42,7 +42,7 @@ switch (app.get('env')) {
     case 'staging':
         app.use(fauxAuth);
         break;
-    
+
     default:
         app.use(morgan('combined'));
         break;
@@ -60,4 +60,3 @@ app.use(require('./routes/wards.js'));
 http.createServer(app).listen(port, function(){
   console.log('Express server listening on port ' + app.get('port'))
 })
-
