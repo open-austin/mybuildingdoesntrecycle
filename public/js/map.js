@@ -1,5 +1,5 @@
 (function($, WIMR){
-  var initialZoomLevel = 12 ;
+  var initialZoomLevel = 11;
   var initialCenterCoords = [30.267153, -97.743061];
 
   WIMR.createMap = function(id) {
