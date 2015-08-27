@@ -1,8 +1,11 @@
 (function($, WIMR){
+  var initialZoomLevel = 12;
+  var initialCenterCoords = [30.267153, -97.743061];
+
   WIMR.createMap = function(id) {
     var map = L.map(id, {
       maxZoom: 20
-  }).setView([30.267153, -97.743061], 14);
+  }).setView(initialCenterCoords, initalZoomLevel);
     var self = this;
     self.locations = {};
     self.pending = [];
@@ -117,7 +120,7 @@
 
     map.wimrReset = function(done) {
 
-      map.setView([30.267153, -97.743061], 14);
+      map.setView(initialCenterCoords, initalZoomLevel);
       map.wimrRefreshLocations(function(){
         for (var loc in self.locations) {
           var mkr = self.locations[loc];
