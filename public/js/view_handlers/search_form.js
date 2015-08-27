@@ -66,7 +66,7 @@
 
           })
           .fail(function (response){
-            var status = "Sorry, either the address was incorrect or doesn't exist in Chicago.";
+            var status = "Sorry, either the address was incorrect or doesn't exist in Austin.";
             $('#addressField').addClass('has-error');
             $('#status').wimrStatus(status, 'warning');
           });
@@ -78,8 +78,8 @@
 
 
   function formatAddressRequest(inputAddress) {
-    var city = 'Chicago';
-    var state = 'IL';
+    var city = 'Austin';
+    var state = 'TX';
     return encodeURIComponent([inputAddress,city,state].join(','));
   }
 
@@ -89,8 +89,8 @@
       address = WIMR.parseGoogleAddress(address);
       if (address.street_number 
       &&  address.route
-      &&  address.city === 'Chicago'
-      &&  address.state === 'Illinois') {
+      &&  address.city === 'Austin'
+      &&  address.state === 'Texas') {
         filtered.push(address);
       }
     });
