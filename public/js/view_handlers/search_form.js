@@ -89,8 +89,8 @@
       address = WIMR.parseGoogleAddress(address);
       if (address.street_number 
       &&  address.route
-      &&  address.city === 'Chicago'
-      &&  address.state === 'Illinois') {
+      &&  address.city === 'Austin'
+      &&  address.state === 'Texas') {
         filtered.push(address);
       }
     });
